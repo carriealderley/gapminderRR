@@ -1,0 +1,34 @@
+---
+title: "Gapminder Analysis"
+author: "Carrie Alderley"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+---
+##Background
+*Instead of wasting our time blaming the media or condemning the human brain, we develop free teaching material to dismantle misconceptions and promote a fact-based worldview.*
+
+```{r hide coder, echo= FALSE}
+print('hello world!')
+```
+
+##Installation 
+To install the gapminder package:
+```{r hide-codes, echo= FALSE}
+print('install.packages("gapminder")')
+```
+
+or you can install gapminder from Github:
+```{r hide-code, echo= FALSE}
+print('devtools::install_github("jennybc/gapminder")')
+```
+
+```{r}
+library("ggplot2")
+ggplot(gapminder::gapminder, aes(x = continent, y = lifeExp)) + geom_boxplot(outlier.colour = "hotpink") + 
+    geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1/4)
+
+```
+
